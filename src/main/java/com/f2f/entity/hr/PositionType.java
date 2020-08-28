@@ -9,21 +9,7 @@ import java.io.Serializable;
 @Table(name = "POSITION_TYPE")
 public class PositionType extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "POSITION_TYPE_ID")
-//    private Integer id;
-
     public PositionType() {
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
 }

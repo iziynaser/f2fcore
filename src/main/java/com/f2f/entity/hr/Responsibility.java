@@ -10,11 +10,6 @@ import java.io.Serializable;
 @Table(name = "RESPONSIBILITY")
 public class Responsibility extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "RESPONSIBILITY_ID")
-//    private Integer id;
-
     private Position position;
 
     @Column(name = "NAME")
@@ -22,14 +17,6 @@ public class Responsibility extends BaseEntity implements Serializable {
 
     @Column(name = "DESCRIPTION")
     private String description;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public Position getPosition() {
         return position;

@@ -6,13 +6,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "CATEGORY_TYPE")
+@Table(name = "CATEGORY_TYPE",uniqueConstraints = @UniqueConstraint(columnNames = {"NAME"}))
 public class CategoryType extends BaseEntity implements Serializable {
-
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "CATEGORY_TYPE_ID")
-//    private Integer id;
 
     @Column(name = "NAME")
     private String name;
@@ -27,15 +22,6 @@ public class CategoryType extends BaseEntity implements Serializable {
         this.name = name;
         this.description = description;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public String getName() {
         return name;

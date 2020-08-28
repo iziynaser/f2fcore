@@ -9,12 +9,6 @@ import java.io.Serializable;
 
 public class BudgetItem extends BaseEntity implements Serializable {
 
-
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "BUDGET_TYPE")
-//    private Integer id;
-
     private Budget budget;
 
     private Short sequenceId;
@@ -24,14 +18,6 @@ public class BudgetItem extends BaseEntity implements Serializable {
     private String amount;
 
     private String purpose;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public Budget getBudget() {
         return budget;

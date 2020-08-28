@@ -12,11 +12,6 @@ import java.util.List;
 @Table(name = "CONTACT")
 public class Contact extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "CONTACT_ID")
-//    private Integer id;
-
     @Column(name = "NAME")
     private String name ;
 
@@ -40,14 +35,6 @@ public class Contact extends BaseEntity implements Serializable {
 
     @Column(name = "EXPIRED")
     private boolean expired;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getName() {
         return name;

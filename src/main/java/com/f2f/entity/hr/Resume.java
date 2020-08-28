@@ -10,11 +10,6 @@ import java.io.Serializable;
 @Table(name = "RESUME")
 public class Resume extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "RESUME_ID")
-//    private Integer id;
-
     @Column(name = "CONTENT_FILE")
     private String contentFile ;
 
@@ -30,14 +25,6 @@ public class Resume extends BaseEntity implements Serializable {
         this.contentFile = contentFile;
         this.resumeDate = resumeDate;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getContentFile() {
         return contentFile;

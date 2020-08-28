@@ -4,9 +4,12 @@ import com.f2f.dao.product.ProductDao;
 import com.f2f.dao.product.ProductMeasureDao;
 import com.f2f.entity.product.Product;
 import com.f2f.entity.product.ProductMeasure;
+import com.revengemission.sso.oauth2.server.domain.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 
 @Component
 @PreAuthorize("isAuthenticated()")
@@ -25,11 +28,10 @@ public class ProductMeasureService {
 
     public ProductMeasure load(String productId) {
         ProductMeasure pm;
-        Product product = productDao.findProductById(Long.valueOf(productId));
-        if(product!=null)
-            pm = productMeasureDao.findAllByProduct(product);
-        else
-            pm = new ProductMeasure();
+        Optional<Product> optionalProduct = productDao.findById(Long.valueOf(productId));
+        Product product = optionalProduct.orElseThrow(EntityNotFoundException::new);
+
+        pm = productMeasureDao.findAllByProduct(product);
 
         return pm;
     }

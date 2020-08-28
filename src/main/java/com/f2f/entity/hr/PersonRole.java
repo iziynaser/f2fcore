@@ -10,11 +10,6 @@ import java.io.Serializable;
 @Table(name = "PERSON_ROLE")
 public class PersonRole extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "PERSON_ROLE_ID")
-//    private Integer id;
-
     private Person person;
 
     @Column(name = "ROLE_NAME")
@@ -37,11 +32,4 @@ public class PersonRole extends BaseEntity implements Serializable {
         this.roleName = roleName;
     }
 
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 }

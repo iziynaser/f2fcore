@@ -9,11 +9,6 @@ import java.io.Serializable;
 @Table(name = "PERSON_TYPE.sql")
 public class PersonType extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "PERSON_TYPE_ID")
-//    private Integer id;
-
     @Column(name = "NAME")
     private String name ;
 
@@ -30,24 +25,6 @@ public class PersonType extends BaseEntity implements Serializable {
         this.version = version;
         this.description = description;
     }
-
-//    @Version
-//    public Integer getVersion() {
-//        return version;
-//    }
-//
-//    public void setVersion(Integer version) {
-//        this.version = version;
-//    }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public String getName() {
         return name;

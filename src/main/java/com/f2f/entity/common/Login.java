@@ -9,11 +9,6 @@ import java.io.Serializable;
 @Table(name = "LOGIN")
 public class Login extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "LOGIN_ID")
-//    private Integer id;
-
     @OneToOne(mappedBy = "login")
     private Person person;
 
@@ -66,16 +61,6 @@ public class Login extends BaseEntity implements Serializable {
         return requirePasswordChange;
     }
 
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
-
     public Person getPerson() {
         return person;
     }
@@ -99,10 +84,6 @@ public class Login extends BaseEntity implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-
-//    public String getDateCreated() {
-//        return dateCreated;
-//    }
 
     public void setDateCreated(String dateCreated) {
         this.dateCreated = dateCreated;

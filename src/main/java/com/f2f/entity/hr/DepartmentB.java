@@ -9,22 +9,8 @@ import java.io.Serializable;
 @Table(name = "DEPARTMENT")
 public class DepartmentB extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "DEPARTMENT_ID")
-//    private Integer id;
-
     @Column(name = "DESCRIPTION")
     private String description;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public String getDescription() {
         return description;

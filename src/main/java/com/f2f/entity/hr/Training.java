@@ -10,20 +10,8 @@ import java.io.Serializable;
 @Table(name = "TRAINING")
 public class Training extends BaseEntity implements Serializable {
 
-//    @Id
-//    @Column(name = "TRAINING_ID")
-//    private Integer id;
-
     @ManyToOne
     private Person person;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public Person getPerson() {
         return person;

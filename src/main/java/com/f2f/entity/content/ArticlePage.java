@@ -1,4 +1,4 @@
-package com.f2f.entity.common;
+package com.f2f.entity.content;
 
 import com.revengemission.sso.oauth2.server.persistence.entity.BaseEntity;
 

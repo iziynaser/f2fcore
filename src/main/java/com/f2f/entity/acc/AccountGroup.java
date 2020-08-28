@@ -9,26 +9,11 @@ import java.io.Serializable;
 @Table(name = "ACCOUNT_GROUP")
 public class AccountGroup extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "ACCOUNT_GROUP_ID")
-//    private Integer id;
-
     @Column(name = "NAME")
     private String name;
 
     @Column(name = "DESCRIPTION")
     private String description;
-
-//
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public String getName() {
         return name;
@@ -53,6 +38,5 @@ public class AccountGroup extends BaseEntity implements Serializable {
         this.name = name;
         this.description = description;
     }
-
 
 }

@@ -9,21 +9,10 @@ import java.io.Serializable;
 @Table(name = "ORDER_STATUS")
 public class OrderStatus extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "ORDER_STATUS_ID")
-//    private Integer id;
-//
-//    public OrderStatus() {
-//    }
-//
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-//
+    private int statusDate ;
+    private int startDate;
+    private int endDate;
+    private int registerDate;
+    private int deliveryDate;
 
 }

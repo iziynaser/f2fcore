@@ -86,39 +86,39 @@ public class F2fExceptionHandler extends ResponseEntityExceptionHandler {
 //        return new ResponseEntity<>(response,HttpStatus.NOT_ACCEPTABLE);
 //    }
 
-    private ResponseEntity<Object> handleInvalidFormatException(InvalidFormatException ex,HttpStatus status){
-        F2fErrorResponse response = new F2fErrorResponse.F2fErrorBuilder()
-            .withErrorCode("206")
-            .withMessage("invalid input")
-            .withStatus(status)
-            .withDetail(ex.toString())
-            .atTime(LocalDateTime.now(ZoneOffset.UTC))
-            .build();
-        return new ResponseEntity<>(response,HttpStatus.NOT_ACCEPTABLE);
-    }
-
-    @ExceptionHandler(value = F2fNotFoundException.class)
-    public ResponseEntity<F2fErrorResponse> handleF2fNotFoundException(F2fNotFoundException ex){
-        F2fErrorResponse response = new F2fErrorResponse.F2fErrorBuilder()
-            .withErrorCode("506")
-            .withMessage("entity not found exception")
-            .withStatus(HttpStatus.NOT_FOUND)
-            .atTime(LocalDateTime.now(ZoneOffset.UTC))
-            .build();
-        return new ResponseEntity<F2fErrorResponse>(response,HttpStatus.NOT_FOUND);
-    }
-
-    @Override
-    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-        F2fErrorResponse response = new F2fErrorResponse.F2fErrorBuilder()
-            .withErrorCode("207")
-            .withMessage("malformed json request")
-            .withStatus(status)
-            .withDetail(ex.getLocalizedMessage())
-            .atTime(LocalDateTime.now(ZoneOffset.UTC))
-            .build();
-        return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
-    }
+//    private ResponseEntity<Object> handleInvalidFormatException(InvalidFormatException ex,HttpStatus status){
+//        F2fErrorResponse response = new F2fErrorResponse.F2fErrorBuilder()
+//            .withErrorCode("206")
+//            .withMessage("invalid input")
+//            .withStatus(status)
+//            .withDetail(ex.toString())
+//            .atTime(LocalDateTime.now(ZoneOffset.UTC))
+//            .build();
+//        return new ResponseEntity<>(response,HttpStatus.NOT_ACCEPTABLE);
+//    }
+//
+//    @ExceptionHandler(value = F2fNotFoundException.class)
+//    public ResponseEntity<F2fErrorResponse> handleF2fNotFoundException(F2fNotFoundException ex){
+//        F2fErrorResponse response = new F2fErrorResponse.F2fErrorBuilder()
+//            .withErrorCode("506")
+//            .withMessage("entity not found exception")
+//            .withStatus(HttpStatus.NOT_FOUND)
+//            .atTime(LocalDateTime.now(ZoneOffset.UTC))
+//            .build();
+//        return new ResponseEntity<F2fErrorResponse>(response,HttpStatus.NOT_FOUND);
+//    }
+//
+//    @Override
+//    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+//        F2fErrorResponse response = new F2fErrorResponse.F2fErrorBuilder()
+//            .withErrorCode("207")
+//            .withMessage("malformed json request")
+//            .withStatus(status)
+//            .withDetail(ex.getLocalizedMessage())
+//            .atTime(LocalDateTime.now(ZoneOffset.UTC))
+//            .build();
+//        return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
+//    }
 
 
 }

@@ -39,7 +39,20 @@ public class NotesController {
         return result;
     }
 
-    @ResponseBody
+//    @ResponseBody
+//    @PostMapping("/save")
+//    public Map<String, Object> createDeliveryAddress(Principal principal,@RequestBody UserAccount ua) {
+//        UserAccount userAccount = userAccountService.findByUsername(principal.getName());
+//        userAccount.setEmail(ua.getEmail());
+//        userAccount.setMobile(ua.getMobile());
+//        userAccount.setGender(ua.getGender());
+//        userAccount.setCity(ua.getCity());
+//        userAccount.setAddress(ua.getAddress());
+//        userAccount.setNickName(ua.getNickName());
+//        userAccountService
+//    }
+
+        @ResponseBody
     @GetMapping("/f2f/userProfile")
     public Map<String, Object> handleProfile(Principal principal,
                                 @RequestParam(value = "nickName", required = false) String nickName,

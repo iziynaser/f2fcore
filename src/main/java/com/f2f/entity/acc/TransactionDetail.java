@@ -9,11 +9,6 @@ import java.io.Serializable;
 @Table(name = "TRANSACTION_DETAIL")
 public class TransactionDetail extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "TRANSACTION_DETAIL_ID")
-//    private Integer id;
-
     @Column(name = "SEQUENCE_ID")
     private Integer sequenceId ;
 
@@ -32,15 +27,6 @@ public class TransactionDetail extends BaseEntity implements Serializable {
 
     @Column(name = "DESCRIPTION")
     private String description;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public Integer getSequenceId() {
         return sequenceId;

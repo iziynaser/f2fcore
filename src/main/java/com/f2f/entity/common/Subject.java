@@ -9,11 +9,6 @@ import java.io.Serializable;
 @Table(name = "SUBJECT")
 public class Subject extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "SUBJECT_ID")
-//    private Integer id;
-
     @Column(name = "NAME")
     private String name ;
 
@@ -27,15 +22,6 @@ public class Subject extends BaseEntity implements Serializable {
         this.name = name;
         this.description = description;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public String getName() {
         return name;

@@ -11,11 +11,6 @@ import java.io.Serializable;
 @Table(name = "SALES")
 public class Sales extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "SALES_ID")
-//    private Integer id;
-
     private Product product;
 
     private Invoice invoice;
@@ -31,15 +26,6 @@ public class Sales extends BaseEntity implements Serializable {
         this.invoice = invoice;
         this.salesDate = salesDate;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public Product getProduct() {
         return product;

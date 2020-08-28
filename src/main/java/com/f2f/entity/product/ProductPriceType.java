@@ -8,24 +8,11 @@ import javax.persistence.*;
 @Table(name = "PRODUCT_PRICE_TYPE")
 public class ProductPriceType extends BaseEntity {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "PRODUCT_PRICE_TYPE_ID")
-//    private Integer id;
-
     @Column(name = "NAME")
     private String name;
 
     @Column(name = "DESCRIPTION")
     private String description;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getName() {
         return name;

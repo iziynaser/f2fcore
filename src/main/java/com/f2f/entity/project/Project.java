@@ -8,11 +8,6 @@ import javax.persistence.*;
 @Table(name = "PROJECT")
 public class Project extends BaseEntity {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "PROJECT_ID")
-//    private Integer id;
-
     @Column(name = "NAME")
     private String name;
 
@@ -106,14 +101,6 @@ public class Project extends BaseEntity {
     public void setStatus(String status) {
         this.status = status;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getName() {
         return name;

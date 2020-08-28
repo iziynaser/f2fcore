@@ -1,12 +1,22 @@
 package com.revengemission.sso.oauth2.server.persistence.entity;
 
+import com.vladmihalcea.hibernate.type.array.StringArrayType;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.TypeDef;
+import org.hibernate.annotations.TypeDefs;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+
+@TypeDefs({
+        @TypeDef(
+                name = "string-array",
+                typeClass = StringArrayType.class
+        ),
+})
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
 

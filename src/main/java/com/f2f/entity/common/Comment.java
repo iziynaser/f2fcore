@@ -5,33 +5,33 @@ import com.revengemission.sso.oauth2.server.persistence.entity.UserAccountEntity
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "COMMENT")
 public class Comment extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name ="COMMENT_ID")
-//    private Integer id;
+    @ManyToOne
+    @JoinColumn(name = "COMMENT_TARGET_ID")
+    private CommentTarget commentTarget;
 
     @Column(name = "SUBJECT")
     private String subject ;
 
-    @Column(name = "BENEFITS")
-    private String benefits;
+    //@ElementCollection
+    @OneToMany(mappedBy = "comment")
+    private List<CommentBenefits> benefits=new ArrayList<>();
 
-    @Column(name = "DISADVANTAGES")
-    private String disadvatages;
+    //@ElementCollection
+    @OneToMany(mappedBy = "comment")
+    private List<CommentUpsets> upsets=new ArrayList<>();
 
     @Column(name = "BODY")
     private String body ;
 
-//    @Column(name = "DATE_CREATED")
-//    private String dateCreated ;
-//
-//    @Column(name = "DATE_MODIFIED")
-//    private String dateModified ;
+    @Column(name = "STATUS")
+    private String status;
 
     @OneToOne
     @JoinColumn(name = "USER_ACCOUNT")
@@ -43,37 +43,12 @@ public class Comment extends BaseEntity implements Serializable {
     public Comment() {
     }
 
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
-
     public String getSubject() {
         return subject;
     }
 
     public void setSubject(String subject) {
         this.subject = subject;
-    }
-
-    public String getBenefits() {
-        return benefits;
-    }
-
-    public void setBenefits(String benefits) {
-        this.benefits = benefits;
-    }
-
-    public String getDisadvatages() {
-        return disadvatages;
-    }
-
-    public void setDisadvatages(String disadvatages) {
-        this.disadvatages = disadvatages;
     }
 
     public String getBody() {
@@ -83,22 +58,6 @@ public class Comment extends BaseEntity implements Serializable {
     public void setBody(String body) {
         this.body = body;
     }
-
-//    public String getDateCreated() {
-//        return dateCreated;
-//    }
-//
-//    public void setDateCreated(String dateCreated) {
-//        this.dateCreated = dateCreated;
-//    }
-
-//    public String getDateModified() {
-//        return dateModified;
-//    }
-//
-//    public void setDateModified(String dateModified) {
-//        this.dateModified = dateModified;
-//    }
 
     public UserAccountEntity getUserAccountEntity() {
         return userAccountEntity;
@@ -114,5 +73,37 @@ public class Comment extends BaseEntity implements Serializable {
 
     public void setCommentLikes(CommentLikes commentLikes) {
         this.commentLikes = commentLikes;
+    }
+
+    public CommentTarget getCommentTarget() {
+        return commentTarget;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setCommentTarget(CommentTarget commentTarget) {
+        this.commentTarget = commentTarget;
+    }
+
+    public List<CommentBenefits> getBenefits() {
+        return benefits;
+    }
+
+    public void setBenefits(List<CommentBenefits> benefits) {
+        this.benefits = benefits;
+    }
+
+    public List<CommentUpsets> getUpsets() {
+        return upsets;
+    }
+
+    public void setUpsets(List<CommentUpsets> upsets) {
+        this.upsets = upsets;
     }
 }

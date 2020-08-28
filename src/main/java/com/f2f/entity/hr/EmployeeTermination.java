@@ -9,19 +9,5 @@ import java.io.Serializable;
 @Table(name = "EMPLOYEE_TERMINATION")
 public class EmployeeTermination extends BaseEntity implements Serializable {
 
-
-    //    @Id
-//    @GeneratedValue
-//    @Column(name = "EMPLOYEE_TERMINATION_ID")
-//    private Integer id;
-//
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 }
 

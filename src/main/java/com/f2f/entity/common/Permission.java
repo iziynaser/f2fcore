@@ -9,11 +9,6 @@ import java.io.Serializable;
 @Table(name = "PERMISSION")
 public class Permission extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "PERMISSION_ID")
-//    private Integer id;
-
     @Column(name = "NAME")
     private String name;
 
@@ -37,14 +32,6 @@ public class Permission extends BaseEntity implements Serializable {
         this.service = service;
         this.group = group;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getName() {
         return name;

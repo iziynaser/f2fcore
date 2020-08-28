@@ -8,20 +8,6 @@ import javax.persistence.*;
 @Table(name = "CASH")
 public class Cash extends BaseEntity {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "CASH_ID")
-//    private Integer id;
-//
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
-
     public Cash() {
     }
 

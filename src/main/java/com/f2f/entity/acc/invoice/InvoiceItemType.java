@@ -11,24 +11,12 @@ import javax.persistence.*;
 @Table(name = "INVOICE_ITEM_TYPE")
 public class InvoiceItemType extends BaseEntity {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name ="INVOICE_ITEM_TYPE_ID")
-//    private Integer id;
 
     @Column(name = "NAME")
     private String name;
 
     @Column(name = "DESCRIPTON")
     private String description ;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getName() {
         return name;

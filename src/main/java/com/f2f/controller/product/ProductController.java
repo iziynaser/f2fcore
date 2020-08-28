@@ -1,6 +1,8 @@
 package com.f2f.controller.product;
 
+import com.f2f.entity.product.NameValueDTO;
 import com.f2f.entity.product.Product;
+import com.f2f.entity.product.ProductDTO;
 import com.f2f.service.product.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +17,8 @@ public class ProductController {
     ProductService productService;
 
     @GetMapping("/list")
-    public List<Product> getProducts(){
-        List<Product> list = productService.findAll();
+    public List<ProductDTO> getProducts(){
+        List<ProductDTO> list = productService.findAllAvailableProducts();
         return list;
     }
 
@@ -36,6 +38,15 @@ public class ProductController {
             Product product = productService.findProductMainPartWithId(id);
             return product;
     }
+
+
+    @ResponseBody
+    @GetMapping("/nameValue")
+    public List<NameValueDTO> getNameValuesOfProducts(){
+        List<NameValueDTO> result = productService.getNameValuesOfProducts();
+        return result;
+    }
+
 
 }
 

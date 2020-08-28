@@ -10,10 +10,6 @@ import java.util.List;
 @Table(name = "ACCOUNTS_CHART")
 public class AccountsChart extends BaseEntity implements Serializable {
 
-//    @GeneratedValue
-//    @Column(name = "ACCOUNTS_ID",unique = true)
-//    private Integer id;
-
     @Column(name = "ACCOUNTS_NAME")
     private String name;//name
 
@@ -50,14 +46,6 @@ public class AccountsChart extends BaseEntity implements Serializable {
     //@JoinTable(name="PARENT_ACCOUNT_CODE", joinColumns = {@JoinColumn(name = "ACCOUNT_CODE")},
     //           inverseJoinColumns = {@JoinColumn(name = "PARENT_ACCOUNT_CODE")})
     private List<AccountsChart> subAccounts ;//= new ArrayList<AccountsChart>();
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getName() {
         return name;

@@ -9,20 +9,6 @@ import javax.persistence.*;
 @Table(name = "PRICING")
 public class Pricing extends BaseEntity {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "PRICING_ID")
-//    private Integer id;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
-
     private Product productId;
 
     //private PricingType pricingType;

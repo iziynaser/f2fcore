@@ -12,11 +12,6 @@ import java.io.Serializable;
 @Table(name = "EMAIL")
 public class Email extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name ="EMAIL_ID")
-//    private Integer id;
-
     @Column(name = "EMAILAD")
     private String email;
 
@@ -25,17 +20,6 @@ public class Email extends BaseEntity implements Serializable {
 
     @Column(name = "PHONE")
     private String phone;
-
-
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public String getEmail() {
         return email;

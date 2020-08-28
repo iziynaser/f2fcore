@@ -1,0 +1,14 @@
+.project
+.settings/
+
+#uploading filder
+upload/
+
+#gradle temporary files
+target/
+
+#intelij files
+**/*.iml
+**/.idea
+**/.gradle
+.idea/**

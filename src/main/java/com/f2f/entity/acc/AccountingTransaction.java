@@ -11,11 +11,6 @@ import java.util.List;
 @Table(name = "ACCOUNTING_TRANSACTION")
 public class AccountingTransaction extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "ACCOUNTING_TRANSACTION_ID")
-//    private Integer id;
-
     @Column(name = "TRANSACTION_NUMBER")
     private String transactionNumber;
 
@@ -45,14 +40,6 @@ public class AccountingTransaction extends BaseEntity implements Serializable {
 
     @OneToMany(mappedBy = "accountingTransaction")
     private List<TransactionDetail> transactionDetailList;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getTransactionNumber() {
         return transactionNumber;

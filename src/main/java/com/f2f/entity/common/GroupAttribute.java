@@ -12,10 +12,6 @@ import java.io.Serializable;
 @Table(name = "GROUP_ATTRIBUTE")
 public class GroupAttribute extends BaseEntity implements Serializable {
 
-//    @Id
-//    @Column(name = "PERSON_ID")
-//    private Integer id;
-
     @Column(name = "ATTRIBUTE_ID")
     private Group group;
 
@@ -35,14 +31,6 @@ public class GroupAttribute extends BaseEntity implements Serializable {
         this.attributeName = attributeName;
         this.attributeValue = attributeValue;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public Group getGroup() {
         return group;

@@ -1,5 +1,7 @@
-package com.f2f.entity.common;
+package com.f2f.entity.content;
 
+import com.f2f.entity.common.Category;
+import com.f2f.entity.content.Page;
 import com.revengemission.sso.oauth2.server.persistence.entity.BaseEntity;
 
 import javax.persistence.*;
@@ -9,11 +11,6 @@ import java.util.List;
 @Entity
 @Table(name = "ARTICLE")
 public class Article extends BaseEntity implements Serializable {
-
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "ARTICLE_ID")
-//    private Integer id;
 
     @Column(name = "NAME")
     private String name;
@@ -56,15 +53,6 @@ public class Article extends BaseEntity implements Serializable {
         this.dateModified = dateModified;
         this.pages = pages;
     }
-
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
-
 
     public String getName() {
         return name;
@@ -114,14 +102,6 @@ public class Article extends BaseEntity implements Serializable {
         this.description = description;
     }
 
-//    public String getDateCreated() {
-//        return dateCreated;
-//    }
-//
-//    public void setDateCreated(String dateCreated) {
-//        this.dateCreated = dateCreated;
-//    }
-
     public String getDateModified() {
         return dateModified;
     }
@@ -129,10 +109,6 @@ public class Article extends BaseEntity implements Serializable {
     public void setDateModified(String dateModified) {
         this.dateModified = dateModified;
     }
-
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public List<Page> getPages() {
         return pages;

@@ -8,11 +8,6 @@ import javax.persistence.*;
 @Table(name = "TASK")
 public class Task extends BaseEntity {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "TASK_ID")
-//    private Integer id;
-
     @Column(name = "NAME")
     private String name;
 
@@ -30,14 +25,6 @@ public class Task extends BaseEntity {
         this.description = description;
         this.project = project;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getName() {
         return name;

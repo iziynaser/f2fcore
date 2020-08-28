@@ -1,5 +1,6 @@
 package com.f2f.entity.product;
 
+import com.f2f.entity.common.CommentTarget;
 import com.revengemission.sso.oauth2.server.persistence.entity.BaseEntity;
 
 import javax.persistence.*;
@@ -18,6 +19,10 @@ public class Product extends BaseEntity implements Serializable {
 
     @Column(name = "NAME")
     private String name;
+
+    @OneToOne
+    @JoinColumn(name = "COMMENT_TARGET_ID")
+    private CommentTarget commentTarget;
 
 //    @OneToOne
 //    @JoinColumn(name = "PRODUCT_TYPE_ID")
@@ -113,5 +118,11 @@ public class Product extends BaseEntity implements Serializable {
         this.brand = brand;
     }
 
+    public CommentTarget getCommentTarget() {
+        return commentTarget;
+    }
 
+    public void setCommentTarget(CommentTarget commentTarget) {
+        this.commentTarget = commentTarget;
+    }
 }

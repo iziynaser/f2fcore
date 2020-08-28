@@ -8,24 +8,11 @@ import javax.persistence.*;
 @Table(name = "NOTES")
 public class Notes extends BaseEntity {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "NOTES_ID")
-//    private Integer id;
-
     @Column(name = "TITLE")
     private String title;
 
     @Column(name = "DESCRIPTION")
     private String description;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getTitle() {
         return title;

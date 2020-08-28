@@ -9,11 +9,6 @@ import java.io.Serializable;
 @Table(name = "PRODUCT_COLOR")
 public class ProductColor extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "PRODUCT_COLOR_ID")
-//    private Integer productColorId;
-
     @Column(name = "COLOR_NAME")
     private String name ;
 
@@ -22,14 +17,6 @@ public class ProductColor extends BaseEntity implements Serializable {
 
     @Column(name = "PRODUCT_CODE")
     private String productCode ;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getName() {
         return name;

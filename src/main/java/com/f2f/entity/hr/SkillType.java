@@ -8,24 +8,11 @@ import javax.persistence.*;
 @Table(name = "SKILL_TYPE")
 public class SkillType extends BaseEntity {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "SKILL_TYPE_ID")
-//    private Integer id;
-
     @Column(name = "SKILL_TYPE_NAME")
     private String name;
 
     @Column(name = "SKILL_TYPE_RATE")
     private String rate ;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getName() {
         return name;

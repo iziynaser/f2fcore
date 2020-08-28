@@ -9,11 +9,6 @@ import java.io.Serializable;
 @Table(name = "SHIPMENT")
 public class Shipment extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name ="SHIPMENT_ID")
-//    private Integer id;
-
     @Column(name = "READY_DATE")
     private Integer readyDate;
 
@@ -31,13 +26,5 @@ public class Shipment extends BaseEntity implements Serializable {
         this.shipDate = shipDate;
         this.arrivalDate = arrivalDate;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
 }

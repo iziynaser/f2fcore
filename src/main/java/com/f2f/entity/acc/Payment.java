@@ -10,11 +10,6 @@ import java.io.Serializable;
 @Table(name = "PAYMENT")
 public class Payment extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "PAYMENT_ID")
-//    private Integer id;
-
     @Column(name = "EFFECTIVE_DATE")
     private String effectiveDate ;
 
@@ -27,14 +22,6 @@ public class Payment extends BaseEntity implements Serializable {
     @OneToOne
     @JoinColumn(name = "PAYMENT_TYPE_ID")
     private PaymentType paymentType;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getEffectiveDate() {
         return effectiveDate;

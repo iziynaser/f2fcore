@@ -1,5 +1,6 @@
 package com.f2f.entity.product;
 
+import com.f2f.entity.common.Category;
 import com.revengemission.sso.oauth2.server.persistence.entity.BaseEntity;
 
 import javax.persistence.*;
@@ -8,30 +9,14 @@ import javax.persistence.*;
 @Table(name = "BRAND")
 public class Brand extends BaseEntity {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "BRAND_ID")
-//    private Integer id;
-
     @Column(name = "NAME")
     private String name;
 
     @Column(name = "VALUE")
     private String value;
 
-    @Column(name = "PRODUCT_ID")
-    private Integer productId;
-
-    @Column(name = "CATEGORY_ID")
-    private Integer categoryId;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
+    @ManyToOne
+    private Category categoryId;
 
     public String getName() {
         return name;
@@ -49,19 +34,11 @@ public class Brand extends BaseEntity {
         this.value = value;
     }
 
-    public Integer getCategoryId() {
+    public Category getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(Integer categoryId) {
+    public void setCategoryId(Category categoryId) {
         this.categoryId = categoryId;
-    }
-
-    public Integer getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Integer productId) {
-        this.productId = productId;
     }
 }

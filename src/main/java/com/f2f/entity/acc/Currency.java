@@ -9,11 +9,6 @@ import java.io.Serializable;
 @Table(name = "ACC_CURRENCY")
 public class Currency extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "CURRENCY_ID")
-//    private Integer id;
-
     @Column(name = "NAME")
     private String name;
 
@@ -41,14 +36,6 @@ public class Currency extends BaseEntity implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getName() {
         return name;

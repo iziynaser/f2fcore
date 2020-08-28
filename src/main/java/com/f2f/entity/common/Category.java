@@ -9,10 +9,8 @@ import java.io.Serializable;
 @Table(name = "CATEGORY")
 public class Category extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "CATEGORY_ID")
-//    private Integer id;
+    @Column(name = "CATEGORY_CODE")
+    private String categoryCode;
 
     @Column(name = "NAME")
     private String name ;
@@ -21,8 +19,19 @@ public class Category extends BaseEntity implements Serializable {
     @JoinColumn(name = "PARENT_CATEGORY_ID")
     private Category parentCategory;
 
-    @Column(name = "CATEGORY_TYPE")
-    private Integer categoryType;
+    //@Column(name = "CATEGORY_TYPE")
+    @OneToOne
+    @JoinColumn(name = "CATEGORY_TYPE_ID")
+    private CategoryType categoryType;
+
+    @Column(name="DESCRIPTION")
+    private String description;
+
+    @Column(name = "IMAGE_URL")
+    private String imageUrl;
+
+    @Column(name = "DETAIL_IMAGE_URL")
+    private String detailImageUrl;
 
     @Column(name = "FROM_DATE")
     private String fromDate;
@@ -30,38 +39,20 @@ public class Category extends BaseEntity implements Serializable {
     @Column(name = "TO_DATE")
     private String toDate;
 
-    @Column(name="DESCRIPTION")
-    private String description;
-
     public Category() {
     }
 
-    public Category(String name, Category parentCategory, Integer categoryType, String fromDate, String toDate) {
+    public Category(String name, Category parentCategory) {
         this.name = name;
         this.parentCategory = parentCategory;
-        this.categoryType = categoryType;
-        this.fromDate = fromDate;
-        this.toDate = toDate;
     }
 
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
-    public Category getParentCategory() {
-        return parentCategory;
+    public String getCategoryCode() {
+        return categoryCode;
     }
 
-    public void setParentCategory(Category parentCategory) {
-        this.parentCategory = parentCategory;
-    }
-
-    public void setCategoryType(Integer categoryType) {
-        this.categoryType = categoryType;
+    public void setCategoryCode(String categoryCode) {
+        this.categoryCode = categoryCode;
     }
 
     public String getName() {
@@ -72,13 +63,46 @@ public class Category extends BaseEntity implements Serializable {
         this.name = name;
     }
 
-    public int getCategoryType() {
+    public Category getParentCategory() {
+        return parentCategory;
+    }
+
+    public void setParentCategory(Category parentCategory) {
+        this.parentCategory = parentCategory;
+    }
+
+    public CategoryType getCategoryType() {
         return categoryType;
     }
 
-    public void setCategoryType(int categoryType) {
+    public void setCategoryType(CategoryType categoryType) {
         this.categoryType = categoryType;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getDetailImageUrl() {
+        return detailImageUrl;
+    }
+
+    public void setDetailImageUrl(String detailImageUrl) {
+        this.detailImageUrl = detailImageUrl;
+    }
+
 
     public String getFromDate() {
         return fromDate;
@@ -95,12 +119,5 @@ public class Category extends BaseEntity implements Serializable {
     public void setToDate(String toDate) {
         this.toDate = toDate;
     }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
+

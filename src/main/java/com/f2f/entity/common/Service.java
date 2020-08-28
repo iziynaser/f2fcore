@@ -10,10 +10,6 @@ import java.util.Collection;
 @Table(name = "SERVICE")
 public class Service extends BaseEntity implements Serializable {
 
-//    @Id
-//    @Column(name = "SERVICE_ID")
-//    private Integer id ;
-
     @Column(name = "NAME")
     private String name;
 
@@ -31,15 +27,6 @@ public class Service extends BaseEntity implements Serializable {
         this.description = description;
         this.groups = groups;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public Collection<Group> getGroups() {
         return groups;

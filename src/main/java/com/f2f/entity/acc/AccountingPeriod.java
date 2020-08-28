@@ -9,11 +9,6 @@ import java.io.Serializable;
 @Table(name = "ACCOUNTING_PERIOD")
 public class AccountingPeriod extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "ACCOUNTING_PERIOD_ID")
-//    private Integer id;
-
     @Column(name = "FROM_DATE")
     private Integer fromDate ;
 
@@ -22,15 +17,6 @@ public class AccountingPeriod extends BaseEntity implements Serializable {
 
     @Column(name = "PERIOD_NUMBER")
     private Short periodNumber;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public Integer getFromDate() {
         return fromDate;

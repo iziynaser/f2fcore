@@ -13,11 +13,6 @@ import java.io.Serializable;
 @Table(name = "INVOICE_ITEM")
 public class InvoiceItem extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name ="INVOICE_ITEM_ID")
-//    private Integer id;
-
     @Column(name = "SEQ_ID")
     private Integer sequenceId;
 

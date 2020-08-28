@@ -8,19 +8,6 @@ import javax.persistence.*;
 @Table(name = "INVOICE_ROLE")
 public class InvoiceRole extends BaseEntity {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name ="INVOICE_ROLE_ID")
-//    private Integer id;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
     public InvoiceRole() {
     }
 

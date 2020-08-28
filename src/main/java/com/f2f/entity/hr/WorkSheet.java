@@ -13,11 +13,6 @@ import java.util.List;
 @Table(name = "WORK_SHEET")
 public class WorkSheet extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "WORK_SHEET_ID")
-//    private Integer id;
-
     @ManyToOne
     private Person person;
 
@@ -32,14 +27,6 @@ public class WorkSheet extends BaseEntity implements Serializable {
 
     @OneToMany(mappedBy = "workSheet",cascade = CascadeType.ALL)
     private List<WorkSheetItem> workSheetItems = new ArrayList<WorkSheetItem>();
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public Person getPerson() {
         return person;

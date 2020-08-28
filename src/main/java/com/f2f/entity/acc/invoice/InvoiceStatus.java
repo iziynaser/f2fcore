@@ -10,11 +10,6 @@ import java.io.Serializable;
 @Table(name = "INVOICE_STATUS")
 public class InvoiceStatus extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name ="INVOICE_STATUS_ID")
-//    private Integer id;
-
     @Column(name = "DATE")
     private String date ;
 
@@ -29,14 +24,6 @@ public class InvoiceStatus extends BaseEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name = "INVOICE_ID")
     private Invoice invoice;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getDate() {
         return date;

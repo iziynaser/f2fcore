@@ -6,9 +6,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @RestController("StorageController")
 @RequestMapping("/f2f/storage")
@@ -22,14 +25,52 @@ public class StorageController {
     }
 
     @GetMapping("/list")
-    public String listAllFiles(Model model,@RequestParam("type")String type,@RequestParam("productId") String productId){
-        model.addAttribute("files",storageService.loadAll(productId, type).map(
-            path -> ServletUriComponentsBuilder.fromCurrentContextPath()
-                                               .path("/download")
-                                               .path(path.getFileName().toString())
-                                               .toUriString())
-            .collect(Collectors.toList()));
-        return "listFiles";
+    @ResponseBody
+    public List<String> listAllFiles(Model model,@RequestParam("type")String type,@RequestParam("productId") String productId){
+
+        //sign 1
+        //        model.addAttribute("files",storageService.loadAll(productId, type).map(
+        //            path -> ServletUriComponentsBuilder.fromCurrentContextPath()
+        //                                               .path("/download")
+        //                                               .path(path.getFileName().toString())
+        //                                               .toUriString())
+        //            .collect(Collectors.toList()));
+        //return "listFiles";
+
+        //sign 2
+//        return storageService.loadAll(productId,type).map(path-> ServletUriComponentsBuilder.fromCurrentContextPath()
+//                .path("/download")
+//                .path(path.getFileName().toString()).toUriString())
+//                .collect(Collectors.toList());
+
+        //sign 3
+//        List<String> res = storageService.loadAll(productId,type).map(path-> ServletUriComponentsBuilder.fromCurrentContextPath()
+//                .path("/images/product/")
+//                .path(productId)
+//                .path("/")
+//                .path(type)
+//                .path("/")
+//                .path(path.getFileName().toString()).toUriString())
+//                .collect(Collectors.toList());
+//        return res;
+
+        //sign 4
+//        List<String> res=new ArrayList<>();
+//        Stream<Path> streamPath = storageService.loadAll(productId,type);
+//        streamPath.forEach(path -> res.add(path.getFileName().toString()));
+//        return res;
+
+        List<String> res = storageService.loadAll(productId,type).map(path-> ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path("/images/product/")
+                .path(productId)
+                .path("/")
+                .path(type)
+                .path("/")
+                .path(path.getFileName().toString()).toUriString())
+                .collect(Collectors.toList());
+        return res;
+
+
     }
 
     @PostMapping("/upload-file")

@@ -1,6 +1,6 @@
-package com.f2f.dao.article;
+package com.f2f.dao.content;
 
-import com.f2f.entity.common.Article;
+import com.f2f.entity.content.Article;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

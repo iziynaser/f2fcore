@@ -11,11 +11,6 @@ import java.io.Serializable;
 @Table(name = "EVENT")
 public class Event extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "EVENT_ID")
-//    private Integer id;
-
     @Column(name = "EVENT_PERSON_FROM")
     private Person fromPerson;
 
@@ -39,14 +34,6 @@ public class Event extends BaseEntity implements Serializable {
 
     @Column(name = "DURATION")
     private String duration;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public Person getFromPerson() {
         return fromPerson;

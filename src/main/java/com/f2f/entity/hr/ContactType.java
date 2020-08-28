@@ -13,16 +13,8 @@ import java.io.Serializable;
 @Table(name = "CONTACT_TYPE")
 public class ContactType extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "CONTACT_TYPE_ID")
-//    private Integer id;
-
     @Column(name = "NAME")
     private String name;
-
-//    @Column(name = "VERSION")
-//    private Integer version;
 
     @Column(name = "DESCRIPTION")
     private String description;
@@ -38,14 +30,6 @@ public class ContactType extends BaseEntity implements Serializable {
         this.description = description;
     }
 
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
     public String getName() {
         return name;
     }
@@ -53,14 +37,6 @@ public class ContactType extends BaseEntity implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
-//    public Integer getVersion() {
-//        return version;
-//    }
-//
-//    public void setVersion(Integer version) {
-//        this.version = version;
-//    }
 
     public String getDescription() {
         return description;

@@ -1,5 +1,6 @@
-package com.f2f.entity.common;
+package com.f2f.entity.content;
 
+import com.f2f.entity.common.CommentTarget;
 import com.revengemission.sso.oauth2.server.persistence.entity.BaseEntity;
 
 import javax.persistence.*;
@@ -9,11 +10,6 @@ import java.io.Serializable;
 @Table(name = "PAGE")
 public class Page extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "PAGE_ID")
-//    private Integer id;
-
     @ManyToOne
     @JoinColumn(name = "ARTICLE_ID")
     private Article article;
@@ -21,11 +17,11 @@ public class Page extends BaseEntity implements Serializable {
     @Column(name = "PAGE_NUMBER")
     private Short pageNumber ;
 
-    @Column(name = "TITLE")
-    private String title ;
+//    @Column(name = "TITLE")
+//    private String title ;
 
-    @Column(name = "BODY")
-    private String body ;
+//    @Column(name = "BODY")
+//    private String body ;
 
     @Column(name = "DATE_CREATED")
     private String dateCreated;
@@ -33,9 +29,9 @@ public class Page extends BaseEntity implements Serializable {
     @Column(name = "DATE_MODIFIED")
     private String dateModified ;
 
-    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "comment_target_id")
-    private CommentTarget commentTarget;
+//    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
+//    @JoinColumn(name = "comment_target_id")
+//    private CommentTarget commentTarget;
 
     public Page() {
     }
@@ -43,33 +39,20 @@ public class Page extends BaseEntity implements Serializable {
     public Page(Article article, Short pageNumber, String title, String body, String dateCreated, String dateModified, CommentTarget commentTarget) {
         this.article = article;
         this.pageNumber = pageNumber;
-        this.title = title;
-        this.body = body;
+        //this.title = title;
+        //this.body = body;
         this.dateCreated = dateCreated;
         this.dateModified = dateModified;
-        this.commentTarget = commentTarget;
+//        this.commentTarget = commentTarget;
     }
 
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
-    public CommentTarget getCommentTarget() {
-        return commentTarget;
-    }
-
-    public void setCommentTarget(CommentTarget commentTarget) {
-        this.commentTarget = commentTarget;
-    }
-
-//    public int getId() {
-//        return id;
+//    public CommentTarget getCommentTarget() {
+//        return commentTarget;
 //    }
 //
-//    public void setId(int id) {
-//        this.id = id;
+//    public void setCommentTarget(CommentTarget commentTarget) {
+//        this.commentTarget = commentTarget;
 //    }
-
 
     public Article getArticle() {
         return article;
@@ -87,28 +70,20 @@ public class Page extends BaseEntity implements Serializable {
         this.pageNumber = pageNumber;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-//    public String getDateCreated() {
-//        return dateCreated;
+//    public String getTitle() {
+//        return title;
 //    }
 //
-//    public void setDateCreated(String dateCreated) {
-//        this.dateCreated = dateCreated;
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
+
+//    public String getBody() {
+//        return body;
+//    }
+//
+//    public void setBody(String body) {
+//        this.body = body;
 //    }
 
     public String getDateModified() {

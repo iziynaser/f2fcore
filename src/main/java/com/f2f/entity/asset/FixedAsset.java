@@ -9,11 +9,6 @@ import java.io.Serializable;
 @Table(name = "FIXED_ASSET")
 public class FixedAsset extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "FIXED_ASSET_ID")
-//    private Integer id;
-
     private String name;
 
     private Integer lastDateService;
@@ -21,14 +16,6 @@ public class FixedAsset extends BaseEntity implements Serializable {
     private Integer nextDateService;
 
     private String description;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getName() {
         return name;

@@ -9,11 +9,6 @@ import java.io.Serializable;
 @Table(name = "COMMENT_LIKES")
 public class CommentLikes extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name ="COMMENT_ID")
-//    private Integer id;
-
     @Column(name = "NUMBER_OF_LIKES")
     private int numberOfLikes ;
 
@@ -23,14 +18,6 @@ public class CommentLikes extends BaseEntity implements Serializable {
     @OneToOne
     @JoinColumn(name = "COMMENT_ID")
     private Comment comment;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public int getNumberOfLikes() {
         return numberOfLikes;

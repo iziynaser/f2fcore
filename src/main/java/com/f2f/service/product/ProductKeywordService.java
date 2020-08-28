@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 @PreAuthorize("isAuthenticated()")
@@ -21,8 +23,9 @@ public class ProductKeywordService {
     ProductDao productDao ;
 
     public List<ProductKeyword> findAllByProduct(Long productId){
-        Product product = productDao.findProductById(productId);
-        List<ProductKeyword> products = productKeywordDao.findAllByProduct(product);
+        Optional<Product> optionalProduct = productDao.findById(productId);
+        Product p = optionalProduct.orElseThrow(EntityNotFoundException::new);
+        List<ProductKeyword> products = productKeywordDao.findAllByProduct(p);
         return products;
     }
 

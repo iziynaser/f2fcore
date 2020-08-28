@@ -9,11 +9,6 @@ import java.io.Serializable;
 @Table(name = "WORK_SHEET_ITEM")
 public class WorkSheetItem extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "WORK_SHEET_ITEM_ID")
-//    private Integer id;
-
     @Column(name = "ENTRY_TIEM")
     private String entryTime;
 
@@ -21,15 +16,6 @@ public class WorkSheetItem extends BaseEntity implements Serializable {
     private String leaveTime;
 
     private WorkSheet workSheet;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public String getEntryTime() {
         return entryTime;

@@ -10,11 +10,6 @@ import java.io.Serializable;
 @Table(name = "CONNECTION")
 public class Connection extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "CONNECTION_ID")
-//    private Integer id;
-
     @OneToOne
     private ConnectionType connectionType;
 
@@ -36,14 +31,6 @@ public class Connection extends BaseEntity implements Serializable {
         this.connectionValue = connectionValue;
         this.available = available;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public ConnectionType getConnectionType() {
         return connectionType;

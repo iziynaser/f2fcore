@@ -10,11 +10,6 @@ import java.io.Serializable;
 @Table(name = "SKILL")
 public class Skill extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "SKILL_ID")
-//    private Integer id;
-
     @Column(name = "SKILL_NAME")
     private String name;
 
@@ -38,14 +33,6 @@ public class Skill extends BaseEntity implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public Person getPerson() {
         return person;

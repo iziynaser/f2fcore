@@ -10,11 +10,6 @@ import java.io.Serializable;
 @Table(name = "PURCHAESE")
 public class Purchase extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "PURCHASE_ID")
-//    private Integer id;
-
     private Product product;
 
     @Column(name = "PURCHASE_DATE")
@@ -35,14 +30,6 @@ public class Purchase extends BaseEntity implements Serializable {
         this.supplierPerson = supplierPerson;
         this.purchaseStatus = purchaseStatus;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public Product getProduct() {
         return product;

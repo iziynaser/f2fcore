@@ -1,6 +1,7 @@
 package com.f2f.service.product;
 
 import com.f2f.dao.product.BrandDao;
+import com.f2f.entity.common.Category;
 import com.f2f.entity.product.Brand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -28,5 +29,10 @@ public class BrandService {
 
     public void delete(Brand b) {
         dao.delete(b);
+    }
+
+    public List<Brand> getAllBrandsByCategoryId(Category category){
+        List<Brand> brands = dao.getAllByCategoryId(category);
+        return brands;
     }
 }

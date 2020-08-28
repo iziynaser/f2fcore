@@ -10,11 +10,6 @@ import java.io.Serializable;
 @Table(name = "PAYMENT_METHOD")
 public class PaymentMethod extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "PAYMENT_METHOD_ID")
-//    private Integer id;
-
     private String fromDate ;
 
     private String throughDate ;
@@ -22,14 +17,5 @@ public class PaymentMethod extends BaseEntity implements Serializable {
     private PaymentMethod paymentMethod;
 
     private Product product;
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
 }

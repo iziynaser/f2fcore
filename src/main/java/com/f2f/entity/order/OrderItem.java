@@ -9,20 +9,6 @@ import java.io.Serializable;
 @Table(name = "ORDER_ITEM")
 public class OrderItem extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "ORDER_ITEM_ID")
-//    private Integer id;
-//
-//    public OrderItem() {
-//    }
-//
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
+
 
 }

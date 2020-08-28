@@ -12,11 +12,6 @@ import java.util.List;
 @Table(name = "POSITION")
 public class Position extends BaseEntity implements Serializable {
 
-//    @Id
-//    @GeneratedValue
-//    @Column(name = "POSITION_ID")
-//    private Integer id;
-
     @Column(name="ESTIMATE_FROM_DATE")
     private Integer estimatedFromDate;
 
@@ -112,15 +107,6 @@ public class Position extends BaseEntity implements Serializable {
     public void setActualToDate(Integer actualToDate) {
         this.actualToDate = actualToDate;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
 
     public List<Responsibility> getResponsibilities() {
         return responsibilities;

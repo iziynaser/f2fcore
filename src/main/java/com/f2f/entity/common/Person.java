@@ -15,10 +15,6 @@ import java.util.List;
 @Table(name = "PERSON")
 public class Person extends BaseEntity implements Serializable {
 
-//    @Id
-//    @Column(name = "PERSON_ID")
-//    private Integer id;
-
     @Column(name = "TITLE")
     private Boolean title;
 
@@ -104,14 +100,6 @@ public class Person extends BaseEntity implements Serializable {
     public void setAdditionalConnection(Collection<Connection> additionalConnection) {
         this.additionalConnection = additionalConnection;
     }
-
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
 
     public String getFirstName() {
         return firstName;
@@ -201,7 +189,4 @@ public class Person extends BaseEntity implements Serializable {
         this.contacts = contacts;
     }
 
-//    public Person(Integer id) {
-//        this.id = id;
-//    }
 }

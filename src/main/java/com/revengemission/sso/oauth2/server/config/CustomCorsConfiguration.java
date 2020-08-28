@@ -20,6 +20,7 @@ public class CustomCorsConfiguration {
         corsConfiguration.addAllowedHeader("*");
         corsConfiguration.addAllowedMethod("GET");
         corsConfiguration.addAllowedMethod("POST");
+        corsConfiguration.addAllowedMethod("DELETE");
         corsConfiguration.addAllowedMethod("OPTIONS");
 ///        corsConfiguration.addExposedHeader("head1");
 ///        corsConfiguration.addExposedHeader("Location");
