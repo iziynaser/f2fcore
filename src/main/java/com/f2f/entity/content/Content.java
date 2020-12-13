@@ -23,8 +23,8 @@ public class Content extends BaseEntity implements Serializable {
     @Column(name = "LANGUAGE")
     private String language ;
 
-//    @Column(name = "STATUS")
-//    private String status ;
+    @Column(name="DESCRIPTION")
+    private String description ;
 
     @Column(name = "TITLE")
     private String title ;
@@ -34,6 +34,10 @@ public class Content extends BaseEntity implements Serializable {
 
     @Column(name = "seq",columnDefinition = "short default 0")
     private short seq;
+
+    @OneToOne
+    @JoinColumn(name = "ID")
+    private ContentType contentType;
 
     @ManyToMany(
             cascade = {
@@ -55,6 +59,9 @@ public class Content extends BaseEntity implements Serializable {
             inverseJoinColumns = {@JoinColumn(name = "RELATED_CONTENT_ID")})
     private List<Content> relatedContents = new ArrayList<>();
 
+
+    @OneToMany(mappedBy = "content")
+    private List<ContentStatus> contentStatuses;
 
     public List<Content> getRelatedContents() {
         return relatedContents;
@@ -100,17 +107,25 @@ public class Content extends BaseEntity implements Serializable {
         return language;
     }
 
+    public List<ContentStatus> getContentStatuses() {
+        return contentStatuses;
+    }
+
+    public void setContentStatuses(List<ContentStatus> contentStatuses) {
+        this.contentStatuses = contentStatuses;
+    }
+
     public void setLanguage(String language) {
         this.language = language;
     }
 
-//    public String getStatus() {
-//        return status;
-//    }
-//
-//    public void setStatus(String status) {
-//        this.status = status;
-//    }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getTitle() {
         return title;
@@ -134,5 +149,13 @@ public class Content extends BaseEntity implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ContentType getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(ContentType contentType) {
+        this.contentType = contentType;
     }
 }

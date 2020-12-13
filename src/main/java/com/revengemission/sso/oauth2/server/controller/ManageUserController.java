@@ -1,20 +1,20 @@
 package com.revengemission.sso.oauth2.server.controller;
 
-import com.revengemission.sso.oauth2.server.domain.GlobalConstant;
-import com.revengemission.sso.oauth2.server.domain.JsonObjects;
-import com.revengemission.sso.oauth2.server.domain.ResponseResult;
-import com.revengemission.sso.oauth2.server.domain.UserAccount;
+import com.revengemission.sso.oauth2.server.domain.*;
 import com.revengemission.sso.oauth2.server.service.UserAccountService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
 @Controller
-@RequestMapping(value = "/management/user")
+@RequestMapping(value = "/f2f/management/user")
 public class ManageUserController {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
@@ -33,12 +33,21 @@ public class ManageUserController {
 
     @GetMapping(value = "/list")
     @ResponseBody
-    public JsonObjects<UserAccount> listObjects(@RequestParam(value = "searchValue", required = false, defaultValue = "") String searchValue,
+    @PreAuthorize("hasRole('SUPER')")
+    public JsonObjects<UserAccount> listObjects(Principal principal,
+                                                @RequestParam(value = "searchValue", required = false, defaultValue = "") String searchValue,
                                                 @RequestParam(value = "draw", defaultValue = "0") int draw,
                                                 @RequestParam(value = "length", defaultValue = "10") Integer pageSize,
                                                 @RequestParam(value = "start", defaultValue = "0") Integer start,
                                                 @RequestParam(value = "sortField", required = false, defaultValue = "id") String sortField,
                                                 @RequestParam(value = "sortOrder", required = false, defaultValue = "desc") String sortOrder) {
+
+        UserAccount userAccount = userAccountService.findByUsername(principal.getName());
+//        int hasRole = userAccount.getRoles().indexOf("SUPER");
+//        System.out.print(hasRole);
+//          if(!userAccountService.hasRole(userAccount.getRoles(),"SUPER"))
+//                throw new UserRoleException(userAccount.getUsername()+"has not Role" + "SUPER");
+
         int pageNum = start / 10 + 1;
         JsonObjects<UserAccount> result = userAccountService.listByUsername(searchValue, pageNum, pageSize, sortField, sortOrder);
         result.setDraw(draw + 1);

@@ -24,6 +24,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Controller
+@RequestMapping(value = "/f2f/user")
 public class ProfileController {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
@@ -37,7 +38,7 @@ public class ProfileController {
     TokenStore tokenStore;
 
     @ResponseBody
-    @RequestMapping("/user/me")
+    @RequestMapping("/me")
     public Map<String, Object> info(@RequestParam(value = "access_token", required = false) String paramToken,
                                     @RequestHeader(value = "Authorization", required = false) String headerToken,
                                     @CookieValue(value = "access_token", required = false) String cookieToken) {
@@ -114,7 +115,7 @@ public class ProfileController {
 //    }
 
 //    @PostMapping("/user/profile")
-    @GetMapping("/user/profile")
+    @GetMapping("/profile")
     public String handleProfile(Principal principal,
                                 @RequestParam(value = "nickName", required = false) String nickName,
                                 @RequestParam(value = "avatarUrl", required = false) String avatarUrl,

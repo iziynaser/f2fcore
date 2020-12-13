@@ -17,6 +17,22 @@ public class ContentDTO {
 
     private String title ;
 
+    private String name;
+
+    private String description;
+
+    private Short seq ;
+
+    private Short ispublic;
+
+    private int ContentType;
+
+    private int purposeType;
+
+    private String fromDate;
+
+    private String toDate;
+
     private List<Tag> tags = new ArrayList<>();
 
     private List<Content> relatedContents = new ArrayList<>();
@@ -79,6 +95,70 @@ public class ContentDTO {
 
     public List<Content> getRelatedContents() {
         return relatedContents;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Short getSeq() {
+        return seq;
+    }
+
+    public void setSeq(Short seq) {
+        this.seq = seq;
+    }
+
+    public int getContentType() {
+        return ContentType;
+    }
+
+    public void setContentType(int contentType) {
+        ContentType = contentType;
+    }
+
+    public String getFromDate() {
+        return fromDate;
+    }
+
+    public void setFromDate(String fromDate) {
+        this.fromDate = fromDate;
+    }
+
+    public String getToDate() {
+        return toDate;
+    }
+
+    public void setToDate(String toDate) {
+        this.toDate = toDate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getPurposeType() {
+        return purposeType;
+    }
+
+    public void setPurposeType(int purposeType) {
+        this.purposeType = purposeType;
+    }
+
+    public Short getIspublic() {
+        return ispublic;
+    }
+
+    public void setIspublic(Short ispublic) {
+        this.ispublic = ispublic;
     }
 
     public void setRelatedContents(List<Content> relatedContents) {
