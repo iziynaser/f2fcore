@@ -15,8 +15,8 @@ public class ProductColor extends BaseEntity implements Serializable {
     @Column(name = "COLOR_VALUE")
     private String value ;
 
-    @Column(name = "PRODUCT_CODE")
-    private String productCode ;
+    @ManyToOne
+    private Product product;
 
     public String getName() {
         return name;
@@ -34,11 +34,11 @@ public class ProductColor extends BaseEntity implements Serializable {
         this.value = value;
     }
 
-    public String getProductCode() {
-        return productCode;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setProductCode(String productCode) {
-        this.productCode = productCode;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }
