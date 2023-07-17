@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "CONTENT")
+@Table(name = "_CONTENT")
 public class Content extends BaseEntity implements Serializable {
 
     @Lob
@@ -32,7 +32,7 @@ public class Content extends BaseEntity implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "seq",columnDefinition = "short default 0")
+    @Column(name = "seq",columnDefinition = "int default 0")
     private short seq;
 
     @OneToOne
