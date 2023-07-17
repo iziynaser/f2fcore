@@ -28,3 +28,8 @@ the resources I used in this app are listed below as far as i can remember:
 ##github
 
 
+##the tools used for developing and debug
+1. visual studio code
+2. intellij community edtion
+3. json view pro (plugin for chrome/firefox)
+4. 
