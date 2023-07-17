@@ -157,6 +157,14 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- for postgres -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -165,7 +173,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
+<!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -191,7 +199,7 @@
                 </configuration>
             </plugin>
 
-             <!--mvn versions:display-dependency-updates-->
+             mvn versions:display-dependency-updates
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
@@ -199,7 +207,7 @@
                     <rulesUri>file:///${project.basedir}/maven-version-rules.xml</rulesUri>
                 </configuration>
             </plugin>
-
+-->
         </plugins>
     </build>
 
