@@ -36,12 +36,7 @@ public class CategoryController {
 //        return categories;
 //    }
 
-    @ResponseBody
-    @GetMapping(value="/listById")
-    public List<Category> findAllCategoriesById(Long id,Long cId){
-        List<Category> categories = categoryService.findAllByParentCategoryAndCategoryType(id,cId);
-        return categories;
-    }
+
 
 
 }
