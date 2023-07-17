@@ -25,7 +25,7 @@ public class ContentController {
 
     @ResponseBody
     @GetMapping("/load")
-    public Content getContentByCode(String code,String language){
+    public Content getContentByCode(String code, String language){
         Content content = contentService.getContentByCodeAndLangauge(code,language);
         return content;
     }
