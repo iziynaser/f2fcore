@@ -122,7 +122,7 @@ INSERT into category(id,name,description,parent_category_id)
 values(41,'دوربین فیلم برداری','دوربین فیلم برداری',39);
 
 INSERT into category(id,name,description,parent_category_id)
-values(42,'تلسکوپ''تلسکوپ',39);
+values(42,39,'تلسکوپ','تلسکوپ');
 
 INSERT into category(id,name,description,parent_category_id)
 values(43,'میکروسکوپ و ذره بین','میکروسکوپ و ذره بین',39);
