@@ -33,7 +33,21 @@ public interface ProductCategoriesDao extends CrudRepository<ProductCategories,L
 
         //@Query("select pc from ProductCategories pc where pc.category = :category and pc.product = :product")
 
+//    @Query("select c.id,c.name, " +
+//            "      c.description,c.fromDate, " +
+//            "      c.toDate,c.categoryCode  " +
+//            "from  ProductCategories as pc " +
+//            "inner join Product as p " +
+//            "on p.id = pc.product " +
+//            "inner join Category as c " +
+//            "on pc.category = c.id  where pc.product = :product  ")
+//    List<Category> getListOfCategoriesRelatedToProduct(@Param("product") Product product);
 
+            @Query(" select c from ProductCategories as pc " +
+                   " inner join Category as c " +
+                   " on pc.category = c " +
+                   " where pc.product = :product " )
+            List<Category> getListOfCategoriesRelatedToProduct(@Param("product") Product product);
     ProductCategories getFirstByCategoryAndProduct(Category category,Product product);
 
 }

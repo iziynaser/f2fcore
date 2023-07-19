@@ -1,5 +1,6 @@
 package com.f2f.controller.product;
 
+import com.f2f.entity.common.Category;
 import com.f2f.entity.product.ProductCategories;
 import com.f2f.entity.product.ProductCategoriesDTO;
 import com.f2f.service.ProductCategoriesService;
@@ -30,11 +31,17 @@ public class ProductCategoriesController {
         return productCategoriesDTOS;
     }
 
+    @ResponseBody
+    @GetMapping("/listOfCategoriesRelatedToProduct")
+    public List<Category> getListOfCategoriesRelatedToThisProduct(@RequestParam(value = "productId") Long productId){
+        List<Category> categoryList = productCategoriesService.getListOfCategoriesRelatedToThisProduct(productId);
+        return categoryList;
+    }
 
     @ResponseBody
     @GetMapping("/delete")
     public String deleteProductFromThisCategory(@RequestParam(value = "categoryId")String categoryId,@RequestParam(value = "productId") String productId){
-        productCategoriesService.deleteProductfromThisCategory(Long.valueOf(categoryId),Long.valueOf(productId));
+        productCategoriesService.deleteProductFromThisCategory(Long.valueOf(categoryId),Long.valueOf(productId));
         return "success" ;
     }
 

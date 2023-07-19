@@ -51,7 +51,14 @@ public class ProductCategoriesService {
         return productCategoriesDTOList;
     }
 
-    public void deleteProductfromThisCategory(Long categoryId, Long productId) {
+    public List<Category> getListOfCategoriesRelatedToThisProduct(Long productId){
+        Optional<Product> optionalProduct = productDao.findById(productId);
+        Product product = optionalProduct.orElseThrow(EntityNotFoundException::new);
+        List<Category> categories = productCategoriesDao.getListOfCategoriesRelatedToProduct(product);
+        return categories;
+    }
+
+    public void deleteProductFromThisCategory(Long categoryId, Long productId) {
         Optional<Category> optionalCategory = categoryDao.findById(categoryId);
         Category category = optionalCategory.orElseThrow(EntityNotFoundException::new);
 
