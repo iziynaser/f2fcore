@@ -25,6 +25,7 @@ public class ProductPriceService {
     }
 
     public List<ProductPrice> getListOfProductPrices(Product product){
-        return productPriceDao.getProductPricesList(product);
+        //return productPriceDao.getProductPricesList(product);
+        return productPriceDao.findAllByProduct(product);
     }
 }

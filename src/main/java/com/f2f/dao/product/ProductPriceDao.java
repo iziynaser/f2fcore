@@ -19,4 +19,6 @@ public interface ProductPriceDao extends JpaRepository<ProductPrice,Long> {
     @Query("select pps from ProductPrice as pps where pps.product = :product")
     List<ProductPrice> getProductPricesList(@Param("product") Product product);
 
+    List<ProductPrice> findAllByProduct(Product product);
+
 }
