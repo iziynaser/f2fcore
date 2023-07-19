@@ -1,6 +1,7 @@
 package com.f2f.service.product;
 
 import com.f2f.dao.product.ProductPriceDao;
+import com.f2f.entity.product.Product;
 import com.f2f.entity.product.ProductPrice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,5 +22,9 @@ public class ProductPriceService {
     public List<ProductPrice> findAll(){
         List<ProductPrice> productPrices = (List<ProductPrice>) productPriceDao.findAll();
         return productPrices;
+    }
+
+    public List<ProductPrice> getListOfProductPrices(Product product){
+        return productPriceDao.getProductPricesList(product);
     }
 }
