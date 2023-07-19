@@ -1,5 +1,6 @@
 package com.f2f.controller.product;
 
+import com.exceptions.F2fNotFoundException;
 import com.f2f.entity.product.Product;
 import com.f2f.entity.product.ProductPrice;
 import com.f2f.entity.product.ProductPriceDTO;
@@ -47,11 +48,18 @@ public class ProductPriceController {
         return pp;
     }
 
-    @ResponseBody
-    @GetMapping("/list")
-    public List<ProductPrice> getProductPrices(){
-        List<ProductPrice> productPrices = productPriceService.findAll();
-        return productPrices;
+    //todo: productId must be optional ,if its true return all
+    @GetMapping(value = "/list")
+    public List<ProductPrice> getListOfProductPrice(@RequestParam(value = "productId", required = true) Long productId) {
+        Product product = productService.findProductById(productId);
+        if (product != null){
+            List<ProductPrice> list = productPriceService.getListOfProductPrices(product);
+            return list;
+        }else{
+            //todo: better handling with errcode,translation
+            throw new F2fNotFoundException("record not found!s");
+        }
     }
+
 
 }
