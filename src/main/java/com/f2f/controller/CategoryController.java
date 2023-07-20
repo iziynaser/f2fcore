@@ -29,6 +29,17 @@ public class CategoryController {
         return categories;
     }
 
+    @ResponseBody
+    @GetMapping(value="/listById")
+    public List<Category> findAllCategoriesById(Long id, Long cId){
+        //todo: handle client values for null
+        Long parentCategoryId = (id==null)? new Long("1") : id;
+        Long categoryTypeId = (cId==null) ? new Long("8") : cId ;
+
+        List<Category> categories = categoryService.findAllByParentCategoryAndCategoryType(parentCategoryId,categoryTypeId);
+        return categories;
+    }
+
 //    @ResponseBody
 //    @GetMapping(value="/listById")
 //    public List<Category> findAllCategoriesById(Long id){
