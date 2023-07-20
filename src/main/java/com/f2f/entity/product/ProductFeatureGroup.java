@@ -10,10 +10,10 @@ import java.util.List;
 @Table(name = "PR_FEATURE_GROUP")
 public class ProductFeatureGroup extends BaseEntity implements Serializable {
 
-    @Column(name = "FEATURE_NAME")
+    @Column(name = "FEATURE_GROUP_NAME")
     private String name;
 
-    @Column(name = "FEATURE_VALUE")
+    @Column(name = "FEATURE_GROUP_VALUE")
     private String featureValue;
 
     //@Column(name = "PRODUCT_ID")

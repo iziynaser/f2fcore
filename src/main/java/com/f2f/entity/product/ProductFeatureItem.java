@@ -10,15 +10,15 @@ import java.util.List;
 @Table(
     name = "PR_FEATURE_ITEM",
     uniqueConstraints =
-        @UniqueConstraint(columnNames = {"FEATURE_NAME","FEATURE_GROUP_ID"})
+        @UniqueConstraint(columnNames = {"FEATURE_ITEM_NAME","FEATURE_GROUP_ID"})
 )
 public class ProductFeatureItem extends BaseEntity implements Serializable {
 
     //@Column(name = "FEATURE_NAME",unique = true)
-    @Column(name = "FEATURE_NAME")
+    @Column(name = "FEATURE_ITEM_NAME")
     private String name;
 
-    @Column(name = "FEATURE_VALUE")
+    @Column(name = "FEATURE_ITEM_VALUE")
     private String featureValue;
 
     @ManyToOne

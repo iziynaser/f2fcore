@@ -9,15 +9,15 @@ import java.io.Serializable;
 @Table(
     name = "PR_FEATURE_ITEMS",
     uniqueConstraints =
-        @UniqueConstraint(columnNames = {"name","FEATURE_ITEM_ID"})
+        @UniqueConstraint(columnNames = {"FEATURE_ITEMS_NAME","FEATURE_ITEM_ID"})
 )
 public class ProductFeatureItems extends BaseEntity implements Serializable {
 
     //@Column(name = "name",unique = true)
-    @Column(name = "name")
+    @Column(name = "FEATURE_ITEMS_NAME")
     private String name;
 
-    @Column(name = "FEATURE_VALUE")
+    @Column(name = "FEATURE_ITEMS_VALUE")
     private String featureValue;
 
     @Column(name = "ORDERS")
