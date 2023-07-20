@@ -63,15 +63,15 @@ public class CategoryService {
 //        return result;
 //    }
 
-    public List<Category> findAllByParentCategoryAndCategoryType(Long cId,Long cTypeId) {
+    public List<Category> findAllByParentCategoryAndCategoryType(Long parentCategoryId,Long categoryTypeId) {
         List<Category> result=new ArrayList<>();
-        Optional<Category>  optionalCategory = categoryDao.findById(cId);
-        Category category = optionalCategory.orElseThrow(EntityNotFoundException::new);
+        Optional<Category>  optionalCategory = categoryDao.findById(parentCategoryId);
+        Category parentCategory = optionalCategory.orElseThrow(EntityNotFoundException::new);
 
-        Optional<CategoryType> optionalCategoryType=categoryTypeDao.findById(cTypeId);
+        Optional<CategoryType> optionalCategoryType=categoryTypeDao.findById(categoryTypeId);
         CategoryType categoryType = optionalCategoryType.orElseThrow(EntityNotFoundException::new);
 
-        Iterable<Category> categories= categoryDao.findAllByParentCategoryAndCategoryType(category,categoryType);
+        Iterable<Category> categories= categoryDao.findAllByParentCategoryAndCategoryType(parentCategory,categoryType);
         categories.forEach(c -> result.add(c));
         return result;
     }
