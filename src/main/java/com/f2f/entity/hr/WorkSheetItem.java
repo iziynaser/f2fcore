@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Table(name = "WORK_SHEET_ITEM")
 public class WorkSheetItem extends BaseEntity implements Serializable {
 
-    @Column(name = "ENTRY_TIEM")
+    @Column(name = "ENTRY_TIME")
     private String entryTime;
 
     @Column(name = "LEAVE_TIME")
