@@ -1,5 +1,6 @@
 package com.f2f.controller.product;
 
+import com.f2f.entity.common.KeyValues;
 import com.f2f.entity.product.NameValueDTO;
 import com.f2f.entity.product.Product;
 import com.f2f.entity.product.ProductDTO;
@@ -16,11 +17,11 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @GetMapping("/list")
-    public List<ProductDTO> getProducts(){
-        List<ProductDTO> list = productService.findAllAvailableProducts();
-        return list;
-    }
+//    @GetMapping("/list")
+//    public List<ProductDTO> getProducts(){
+//        List<ProductDTO> list = productService.findAllAvailableProducts();
+//        return list;
+//    }
 
     @ResponseBody
     @PostMapping(value = "/save")
@@ -39,7 +40,6 @@ public class ProductController {
             return product;
     }
 
-
     @ResponseBody
     @GetMapping("/nameValue")
     public List<NameValueDTO> getNameValuesOfProducts(){
@@ -47,6 +47,33 @@ public class ProductController {
         return result;
     }
 
+    @GetMapping("/countCommentsForProduct")
+    public int getNumberOfCommentsForProduct(@RequestParam("productId") String productId){
+        return 40;
+//        KeyValues kv = new KeyValues("result","0");
+//        return kv;
+    }
+
+    @GetMapping("/countViewsForProduct")
+    public int getNumberOfViewsForProduct(@RequestParam("productId") String productId){
+        return 10;
+//        KeyValues kv = new KeyValues("result","0");
+//        return kv;
+    }
+
+    @GetMapping("/countRemainStoreForProduct")
+    public int getNumberOfRemainProductsInStore(@RequestParam("productId") String productId){
+        return 20;
+//        KeyValues kv = new KeyValues("result","0");
+//        return kv;
+    }
+
+    @GetMapping("/countStarsForProduct")
+    public int getNumberOfStarsForProduct(@RequestParam("productId") String productId){
+        return 30;
+//        KeyValues kv = new KeyValues("result","0");
+//        return kv;
+    }
 
 }
 
