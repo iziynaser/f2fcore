@@ -25,4 +25,7 @@ public interface ProductFeatureGroupDao extends JpaRepository<ProductFeatureGrou
 
     @Query("select t from ProductFeatureGroup as t where t.product=:product")
     ProductFeatureGroup loadProductFeatureGroupWithProductId(@Param("product") Product product);
+
+    @Query("select 1 from ProductFeatureGroup as t where t.product=:product")
+    int isThereARecordOnProductFeatureGroup(@Param("product") Product product);
 }
