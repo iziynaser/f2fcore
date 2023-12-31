@@ -34,7 +34,7 @@ public class LoginHistoryController {
             responseResult.setData(loginHistories.getData());
         }catch (Exception e){
             responseResult.setStatus(GlobalConstant.ERROR);
-            responseResult.setMessage("error,please try agin");
+            responseResult.setMessage("error,please try again");
         }
         return responseResult;
     }
