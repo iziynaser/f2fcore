@@ -13,11 +13,11 @@ public class ProductCommentController {
 
     @ResponseBody
     @GetMapping("/numberOfCommentsForProduct")
-    int getNumberOfCommentsForProduct(@RequestParam("productId") String productId){
+    String getNumberOfCommentsForProduct(@RequestParam("productId") String productId){
         int count = 0;
         Long id = Long.valueOf(productId);
         count = productCommentService.getNumberOfCommentsOnProduct(id);
-        return count ;
+        return String.valueOf(count) ;
     }
 
 }
