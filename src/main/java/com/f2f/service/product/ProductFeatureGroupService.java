@@ -24,8 +24,21 @@ public class ProductFeatureGroupService {
         return f;
     }
 
+    public ProductFeatureGroup newProductFeatureGroup(Product product){
+        ProductFeatureGroup pfg = new ProductFeatureGroup("moshakhasat","moshakhasat",0);
+        pfg.setProduct(product);
+        productFeatureGroupDao.save(pfg);
+        return pfg;
+    }
+
     public ProductFeatureGroup loadProductFeatureGroupWithProductId(Product product){
         ProductFeatureGroup pfg = productFeatureGroupDao.loadProductFeatureGroupWithProductId(product);
         return pfg;
+    }
+
+    public int isThereARecordOnProductFeatureGroupForProduct(Product product){
+        int count = 0;
+        count = productFeatureGroupDao.isThereARecordOnProductFeatureGroup(product);
+        return count;
     }
 }
