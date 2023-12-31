@@ -38,8 +38,8 @@ public class ProductCategoriesService {
         productCategories.setProduct(product);
         productCategories.setCategory(category);
 
-        return productCategoriesDao.save(productCategories);
-
+        ProductCategories pCategories  = productCategoriesDao.save(productCategories);
+        return pCategories;
     }
 
     public List<ProductCategoriesDTO> listOfProductsRelatedToThiscategory(Long categoryId){
