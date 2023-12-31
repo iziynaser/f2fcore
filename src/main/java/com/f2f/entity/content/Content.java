@@ -1,6 +1,7 @@
 package com.f2f.entity.content;
 
 import com.revengemission.sso.oauth2.server.persistence.entity.BaseEntity;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,6 +13,8 @@ import java.util.List;
 public class Content extends BaseEntity implements Serializable {
 
     @Lob
+    @Type(type="text")
+    @Column(name = "BODY")
     private String Body ;
 
     @Column(name = "CODE")
