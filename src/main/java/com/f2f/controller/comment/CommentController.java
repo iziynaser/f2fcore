@@ -2,17 +2,15 @@ package com.f2f.controller.comment;
 
 import com.f2f.dao.comment.CommentDTO;
 import com.f2f.dao.comment.CommentDTOS;
-import com.f2f.entity.common.Comment;
 import com.f2f.entity.common.CommentTarget;
+import com.f2f.entity.common.KeyValues;
 import com.f2f.entity.product.Product;
 import com.f2f.service.comment.CommentService;
 import com.f2f.service.comment.CommentTargetService;
 import com.f2f.service.product.ProductService;
 import com.revengemission.sso.oauth2.server.domain.UserAccount;
-import com.revengemission.sso.oauth2.server.persistence.entity.UserAccountEntity;
 import com.revengemission.sso.oauth2.server.service.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -36,13 +34,6 @@ public class CommentController {
     UserAccountService userAccountService;
 
     @ResponseBody
-    @RequestMapping("/list")
-    public List<CommentDTO> getListOfCommentsForProductId(Long productId){
-        List<CommentDTO> commentList = commentService.getListOfCommentsForProductId(productId);
-        return commentList;
-    }
-
-    @ResponseBody
     @PostMapping(value = "/save")
     public CommentDTO createComment(Principal principal, @RequestBody CommentDTOS commentDTO){
 
@@ -57,5 +48,17 @@ public class CommentController {
         }
          commentService.createComment(commentDTO,commentTarget,userAccount);
         return null;
+    }
+
+    @ResponseBody
+    @RequestMapping("/list")
+    public List<CommentDTO> getListOfCommentsForProductId(Long productId){
+        List<CommentDTO> commentList = commentService.getListOfCommentsForProductId(productId);
+        return commentList;
+    }
+    @RequestMapping("/count")
+    public KeyValues getCommentCount(){
+        KeyValues kv = new KeyValues("result","10");
+        return  kv;
     }
 }
