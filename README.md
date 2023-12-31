@@ -32,4 +32,23 @@ the resources I used in this app are listed below as far as i can remember:
 1. visual studio code
 2. intellij community edtion
 3. json view pro (plugin for chrome/firefox)
-4. 
+
+##upload images
+برای اپلود تصاویر محصولات باید تنظیمات ذیل انجام شود
+۱. ایجاد پوشه اپلود
+این پوشه در کنار پوشه سورس بایستی ایجاد شود
+
+## naming requestmapping 
+هم نام با کلاس کنترلر است تنها عبارت کنترلر در ان ذکر نمی شود
+
+
+## requestcalls
+1. {get}
+   2. http://localhost:8080/f2f/relatedProducts/list?productId=1
+2. {post}
+
+## handle error for development
+1.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: 
+    Required String parameter 'productId' is not present]
+    {production mode : ignore log the err}
+    {development mode : log the error}
