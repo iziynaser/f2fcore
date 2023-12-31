@@ -74,7 +74,6 @@ public class ProductFeatureGroupController {
         return pTree;
     }
 
-
     @ResponseBody
     @GetMapping("/load")
     public PTree loadProductFeatureGroup(@RequestParam(value = "productId")String productId ){
@@ -110,5 +109,15 @@ public class ProductFeatureGroupController {
         return pTree;
     }
 
-
+    //todo: initialize the product_feature_group at first time when loaded features
+    /* also it is a bug from client side or server side
+        because when the product is created .. product feature group was not created */
+    boolean initializeProductFeatureGroupForProduct(@RequestParam(value = "productId")String productId ){
+        Product product = productService.findProductById(Long.valueOf(productId));
+        int c = productFeatureGroupService.isThereARecordOnProductFeatureGroupForProduct(product) ;
+        if(c==0){
+            productFeatureGroupService.save(new ProductFeatureGroup());
+        }
+        return true ;
+    }
 }
